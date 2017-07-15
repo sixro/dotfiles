@@ -1,6 +1,10 @@
 " ==  Commons  =========================================================
 
 set nocompatible
+syntax enable
+filetype plugin on
+filetype indent on
+
 set encoding=utf-8
 
 let mapleader=","
@@ -13,8 +17,6 @@ set wildmenu
 colorscheme koehler
 set number numberwidth=5 relativenumber
 
-syntax enable
-filetype indent on
 set autoindent
 set tabstop=4
 set showmatch
