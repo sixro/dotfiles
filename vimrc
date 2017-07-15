@@ -4,9 +4,7 @@ set nocompatible
 set encoding=utf-8
 
 " Enable line numbers
-set number
-set numberwidth=5
-set relativenumber
+set number numberwidth=5 relativenumber
 
 colorscheme koehler
 
