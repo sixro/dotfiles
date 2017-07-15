@@ -18,5 +18,9 @@ alias ls='ls --color=always'
 alias ll='ls -l'
 alias la='ls -la'
 
+# pushd/popd as subs cd command...
+alias cdn='pushd'
+alias cdp='popd'
+
 # Update dotfiles, whatever I did...
 alias dotu='pushd $HOME/dotfiles; git add .; git commit -m "Update I need"; git push origin master; popd'
