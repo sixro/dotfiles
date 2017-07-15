@@ -43,3 +43,4 @@ dotfsupdate() {
 }
 alias dotu='dotfsupdate'
 alias dots='pushd $HOME/dotfiles; git status; git diff; popd'
+alias vimrc='vi $HOME/dotfiles/vimrc'

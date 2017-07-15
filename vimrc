@@ -49,3 +49,8 @@ imap <Right> <Nop>
 
 " Disable the fuck*** bell
 set visualbell
+
+
+" ==  Development  =====================================================
+
+set path=$PWD/**
