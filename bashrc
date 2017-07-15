@@ -1,5 +1,5 @@
 # Setup ls command...
-export LSCOLORS=ExFxCxDxBxegedabagacad
+#export LSCOLORS=ExFxCxDxBxegedabagacad
 alias ls='ls --color=always'
 
 # Register Github SSH key...
@@ -14,3 +14,5 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+alias dotu='pushd $HOME/dotfiles; git add .; git commit -m "Update I need"; git push origin master; popd'

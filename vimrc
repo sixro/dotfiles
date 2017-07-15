@@ -1,3 +1,19 @@
+" ==  Commons  =========================================================
+
+set nocompatible
+set encoding=utf-8
+
+" Enable line numbers
+set number
+set numberwidth=5
+set relativenumber
+
+colorscheme koehler
+
+" Avoid the need of save current buffer before switching to another
+set hidden
+
+
 " ==  Learning Improvement  ============================================
 
 " Disable Arrow keys in Escape and Insert mode
