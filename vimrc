@@ -3,6 +3,8 @@
 set nocompatible
 set encoding=utf-8
 
+let mapleader=","
+
 " Avoid the need of save current buffer before switching to another
 set hidden
 
@@ -16,23 +18,28 @@ filetype indent on
 set autoindent
 set tabstop=4
 set showmatch
+
+" Search
 set hlsearch
 set incsearch
+nnoremap <Leader><Space> :nohlsearch<CR>
 
 " Improve performance of macros avoiding redrawing continuosly
 set lazyredraw
 
+set foldenable
+
 " ==  Learning Improvement  ============================================
 
 " Disable Arrow keys in Escape and Insert mode
-map <up> <nop>
-map <down> <nop>
-map <left> <nop>
-map <right> <nop>
-imap <up> <nop>
-imap <down> <nop>
-imap <left> <nop>
-imap <right> <nop>
+map <Up>    <Nop>
+map <Down>  <Nop>
+map <Left>  <Nop>
+map <Right> <Nop>
+imap <Up>    <Nop>
+imap <Down>  <Nop>
+imap <Left>  <Nop>
+imap <Right> <Nop>
 
 
 " ==  Windows Environment  =============================================
