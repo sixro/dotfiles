@@ -33,8 +33,7 @@ alias cdp='popd'
 alias cdev='cdn ${DEV_HOME}'
 alias cpr='cdn ${PROJECT_HOME}'
 
-# Update dotfiles, whatever I did...
-alias dotu='pushd $HOME/dotfiles; git add .; git commit -m "Update I need"; git push origin master; popd'
+# Handle dotfiles
 dotfsupdate() {
 		pushd ${HOME}/dotfiles;
 		git add .;
@@ -42,5 +41,5 @@ dotfsupdate() {
 		git push origin master;
 		popd;
 }
-alias dotum='dotfsupdate'
+alias dotu='dotfsupdate'
 alias dots='pushd $HOME/dotfiles; git status; git diff; popd'
