@@ -11,7 +11,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# Env vars are on specific systems
+# Env vars are not stored remotely
 # Usually I need:
 #    JAVA_HOME
 #    DEV_HOME
