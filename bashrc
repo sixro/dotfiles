@@ -11,6 +11,13 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# Env vars are on specific systems
+# Usually I need:
+#    JAVA_HOME
+#    DEV_HOME
+#    PROJECT_HOME
+. .envs
+
 
 # ==  Aliases  =========================================================
 
@@ -21,6 +28,10 @@ alias la='ls -la'
 # pushd/popd as subs cd command...
 alias cdn='pushd'
 alias cdp='popd'
+
+# cd known dirs
+alias cdev='cdn ${DEV_HOME}'
+alias cpr='cdn ${PROJECT_HOME}'
 
 # Update dotfiles, whatever I did...
 alias dotu='pushd $HOME/dotfiles; git add .; git commit -m "Update I need"; git push origin master; popd'
