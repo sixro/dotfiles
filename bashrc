@@ -35,4 +35,12 @@ alias cpr='cdn ${PROJECT_HOME}'
 
 # Update dotfiles, whatever I did...
 alias dotu='pushd $HOME/dotfiles; git add .; git commit -m "Update I need"; git push origin master; popd'
+dotfsupdate() {
+		pushd ${HOME}/dotfiles;
+		git add .;
+		git commit -m "$1";
+		git push origin master;
+		popd;
+}
+alias dotum='dotfsupdate'
 alias dots='pushd $HOME/dotfiles; git status; git diff; popd'
