@@ -1,7 +1,3 @@
-# Setup ls command...
-#export LSCOLORS=ExFxCxDxBxegedabagacad
-alias ls='ls --color=always'
-
 # Register Github SSH key...
 eval $(ssh-agent -s)
 ssh-add $HOME/.ssh/id_rsa_github
@@ -15,4 +11,12 @@ if ! shopt -oq posix; then
   fi
 fi
 
+
+# ==  Aliases  =========================================================
+
+alias ls='ls --color=always'
+alias ll='ls -l'
+alias la='ls -la'
+
+# Update dotfiles, whatever I did...
 alias dotu='pushd $HOME/dotfiles; git add .; git commit -m "Update I need"; git push origin master; popd'
