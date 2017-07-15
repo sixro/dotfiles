@@ -29,6 +29,7 @@ set lazyredraw
 
 set foldenable
 
+
 " ==  Learning Improvement  ============================================
 
 " Disable Arrow keys in Escape and Insert mode

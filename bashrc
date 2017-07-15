@@ -24,4 +24,4 @@ alias cdp='popd'
 
 # Update dotfiles, whatever I did...
 alias dotu='pushd $HOME/dotfiles; git add .; git commit -m "Update I need"; git push origin master; popd'
-alias dots='pushd $HOME/dotfiles; git status; popd'
+alias dots='pushd $HOME/dotfiles; git status; git diff; popd'
