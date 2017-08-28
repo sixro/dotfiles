@@ -1,6 +1,9 @@
 # Register Github SSH key...
-eval $(ssh-agent -s)
-ssh-add $HOME/.ssh/id_rsa_github
+# TODO plan to make a cycle on all id_rsa found in .ssh dir...
+if [ -f "$HOME/.ssh/id_rsa_github" ]; then
+		eval $(ssh-agent -s)
+		ssh-add $HOME/.ssh/id_rsa_github
+fi
 
 # Enable auto-completion...
 if ! shopt -oq posix; then
@@ -16,12 +19,19 @@ fi
 #    JAVA_HOME
 #    DEV_HOME
 #    PROJECT_HOME
-. .envs
+if [ -f ".envs" ]; then
+	. .envs
+fi
 
 
 # ==  Aliases  =========================================================
 
-alias ls='ls --color=always'
+ostype=`uname -s`
+if [ $ostype = 'Darwin' ]; then
+	alias ls='ls -G'
+else
+	alias ls='ls --color=always'
+fi
 alias ll='ls -l'
 alias la='ls -la'
 
