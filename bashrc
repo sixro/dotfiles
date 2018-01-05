@@ -19,8 +19,13 @@ fi
 #    JAVA_HOME
 #    DEV_HOME
 #    PROJECT_HOME
-if [ -f ".envs" ]; then
-	. .envs
+if [ -f "$HOME/.envs" ]; then
+	. $HOME/.envs
+fi
+
+# Add a bin directory if exists
+if [ -f "$HOME/bin" ]; then
+	export PATH="${PATH}:${HOME}/bin"
 fi
 
 
