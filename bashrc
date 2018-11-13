@@ -1,3 +1,6 @@
+# History configuration
+export HISTCONTROL=ignoreboth:erasedups
+
 # Register Github SSH key...
 # TODO plan to make a cycle on all id_rsa found in .ssh dir...
 if [ -f "$HOME/.ssh/id_rsa_github" ]; then
