@@ -1,6 +1,9 @@
 " ==  Commons  =========================================================
 
 set nocompatible
+
+execute pathogen#infect()
+
 syntax enable
 filetype plugin on
 filetype indent on
@@ -14,7 +17,7 @@ set hidden
 
 set wildmenu
 
-colorscheme koehler
+colorscheme torte
 set number numberwidth=5 relativenumber
 
 set autoindent
