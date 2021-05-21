@@ -17,7 +17,7 @@ set hidden
 
 set wildmenu
 
-colorscheme torte
+" colorscheme torte
 set number numberwidth=5 relativenumber
 
 set autoindent
