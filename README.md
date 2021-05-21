@@ -1,8 +1,11 @@
 # dotfiles
 
-  * Links the files (TODO: make a script)
-  * vim: `.vim/install-pathogen.sh`
-  *
+  * Create links (TODO automate this)
+  * For vim you have to install `vim-pathogen` using the script:
+  ```
+      ./vim/install-pathogen.sh
+  ```
+
 
 ## Videos
 
