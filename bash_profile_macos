@@ -1,0 +1,11 @@
+export PATH="/opt/homebrew/bin:${PATH}"
+export HISTCONTROL=ignoreboth:erasedups
+
+if [ -f "${HOME}/.bashrc" ]; then
+    source "${HOME}/.bashrc"
+fi
+
+# Add a bin directory if exists
+if [ -d "$HOME/bin" ]; then
+	export PATH="${PATH}:${HOME}/bin"
+fi
