@@ -1,59 +1,102 @@
-" ==  Commons  =========================================================
+" ======================================================================
+"  sixro vimrc
+" ======================================================================
+
+
+" =  Common Stuff  =====================================================
+
+set mouse=a
 
 set nocompatible
 
-execute pathogen#infect()
-
-syntax enable
+filetype on
 filetype plugin on
 filetype indent on
 
-set encoding=utf-8
+syntax on
 
-let mapleader=","
+set ts=4 sw=4
+set softtabstop=4
+set autoindent
+set smartindent
 
-" Avoid the need of save current buffer before switching to another
+set number!
+
+set showmode
+set ruler
+set visualbell " no beeps
+set wildmenu
+" set cursorline "Hilight cursorline
+
 set hidden
 
-set wildmenu
 
-" colorscheme torte
-set number numberwidth=5 relativenumber
+" =  Show column marker at 78  =========================================
 
-set autoindent
-set tabstop=4
-set showmatch
-
-" Search
-set hlsearch
-set incsearch
-nnoremap <Leader><Space> :nohlsearch<CR>
-
-" Improve performance of macros avoiding redrawing continuosly
-set lazyredraw
-
-set foldenable
+nnoremap <Leader>c :set colorcolumn=78<cr>
+nnoremap <Leader>nc :set colorcolumn-=78<cr>
 
 
-" ==  Learning Improvement  ============================================
+" =  Theme  ============================================================
 
-" Disable Arrow keys in Escape and Insert mode
-map <Up>    <Nop>
-map <Down>  <Nop>
-map <Left>  <Nop>
-map <Right> <Nop>
-imap <Up>    <Nop>
-imap <Down>  <Nop>
-imap <Left>  <Nop>
-imap <Right> <Nop>
+"set termguicolors
+set background=light
+colorscheme morning
+hi Normal ctermbg=15 ctermfg=239
+hi LineNr ctermfg=251
+hi ColorColumn ctermbg=255
+hi Number ctermfg=12
+hi String ctermfg=5
+hi Character ctermfg=13
+hi Comment ctermfg=245
+hi Todo ctermfg=6 ctermbg=15 cterm=bold
+hi Keyword ctermfg=232 cterm=bold
+hi Conditional ctermfg=232 cterm=bold
+hi Repeat ctermfg=232 cterm=bold
+hi Type ctermfg=232 cterm=bold
+hi Statement ctermfg=232
+hi PreProc ctermfg=232 cterm=bold
+hi Constant ctermfg=232 ctermbg=15
+hi Include ctermfg=232 cterm=bold
+hi Define ctermfg=232
+
+" Invisible character colors 
+highlight NonText ctermfg=251 ctermbg=15
+highlight SpecialKey ctermfg=251 ctermbg=15
 
 
-" ==  Windows Environment  =============================================
+" =  Invisible characters  =============================================
 
-" Disable the fuck*** bell
-set visualbell
+" Use the same symbols as TextMate for tabstops and EOLs
+set listchars=tab:▸\ ,eol:¬
+nmap <leader>l :set list!<CR>
 
 
-" ==  Development  =====================================================
+" =  Netrw Setup  ======================================================
 
-set path=$PWD/**
+let g:netrw_banner = 0
+let g:netrw_keepdir = 0
+let g:netrw_winsize = 20
+let g:netrw_liststyle = 3
+let g:netrw_localcopydircmd = 'cp -r'
+hi! link netrwMarkFile Search
+nmap ` :Lexplore<CR>
+
+
+" =  Debugger  =========================================================
+
+" packadd termdebug
+
+
+" =  C Programming  ====================================================
+
+let sdk_path = system('xcrun --show-sdk-path | tr -d "\n"')
+execute 'set path+=' . sdk_path . '/usr/include'
+set path+=.
+set path+=./include
+set suffixesadd+=.h,.hpp,.c,.cpp
+
+
+nnoremap <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
