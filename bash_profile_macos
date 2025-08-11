@@ -13,3 +13,14 @@ fi
 if [ -d "/opt/homebrew/opt/openjdk@21/bin" ]; then
     export PATH="/opt/homebrew/opt/openjdk@21/bin:$PATH"
 fi
+
+export PATH=/opt/homebrew/Cellar/gcc/15.1.0/bin:$PATH
+export CC=gcc-15
+export CXX=g++-15
+export LDFLAGS=-Wl, ld_classic
+
+RED='\[\033[0;31m\]'
+BLUE='\[\033[0;34m\]'
+GREEN='\[\033[0;32m\]'
+RESET='\[\033[0m\]'
+export PS1="${RED}\u${RESET}@${BLUE}\W${RESET} \$ "
