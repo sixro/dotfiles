@@ -19,8 +19,9 @@ export CC=gcc-15
 export CXX=g++-15
 export LDFLAGS=-Wl, ld_classic
 
-RED='\[\033[0;31m\]'
-BLUE='\[\033[0;34m\]'
-GREEN='\[\033[0;32m\]'
-RESET='\[\033[0m\]'
-export PS1="${RED}\u${RESET}@${BLUE}\W${RESET} \$ "
+#RED='\[\033[0;31m\]'
+#BLUE='\[\033[0;34m\]'
+#GREEN='\[\033[0;32m\]'
+#RESET='\[\033[0m\]'
+#export PS1="${RED}\u${RESET}@${BLUE}\W${RESET} \$ "
+export PS1="\$ "

@@ -5,7 +5,9 @@
 
 " =  Common Stuff  =====================================================
 
-set mouse=a
+"set mouse=a
+set mouse=
+set ttymouse=
 
 set nocompatible
 
@@ -80,7 +82,7 @@ let g:netrw_winsize = 20
 let g:netrw_liststyle = 3
 let g:netrw_localcopydircmd = 'cp -r'
 hi! link netrwMarkFile Search
-nmap ` :Lexplore<CR>
+nmap <leader>e :Lexplore<CR>
 
 
 " =  Debugger  =========================================================
@@ -96,7 +98,25 @@ set path+=.
 set path+=./include
 set suffixesadd+=.h,.hpp,.c,.cpp
 
+" Allow commenting an entire block in Visual Mode
+xnoremap <Leader>/ <Esc>'<O/*<Esc>'>o*/<Esc>
 
 nnoremap <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
 \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+
+
+" Yank the selected rows to the system clipboard
+vnoremap Y "+y
+
+" Continuous identation
+vmap > >gv
+vmap < <gv
+
+
+" Plugins
+call plug#begin()
+
+Plug 'epheien/termdbg'
+
+call plug#end()
